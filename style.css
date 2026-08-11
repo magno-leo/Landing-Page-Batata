@@ -102,3 +102,33 @@ header .botao-vermelho-arredondado img{
 .textoHero p{
     width: 80%;
 }
+/*seção produtos*/
+.section-produtos{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container-alinhado{
+    display: flex;
+    width: 40%;
+    align-items: center;
+    gap: 2%;
+}
+.container-alinhado img{
+    width: 15%;
+    aspect-ratio: 1/1;
+}
+.container-alinhado h1{
+    flex-shrink: 0;
+    color: var(--cor-primaria-verm);
+}
+.linha{
+    height: 2px;
+    width: 100%;
+    background-image: linear-gradient(to right, white, var(--cor-primaria-verm));
+}
+.linha:last-child{
+   background-image: linear-gradient(to left, white, var(--cor-primaria-verm)); 
+}
+
