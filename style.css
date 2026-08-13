@@ -35,7 +35,9 @@
     height: max-content;
     width: 100%;
     padding: 2% 10%;
-    transform: translateY(-40px);
+    margin-top:-40px;
+    position: relative;
+    z-index: 2;
 }
 .template-section-sobreposta-laranja{
     border-radius: 40px 40px 0 0;
@@ -120,7 +122,7 @@ header .botao-vermelho-arredondado img{
 }
 /*main*/
 main{
-    transform: translateY(-20vh);
+    margin-top:-20vh;
 }
 /*Hero*/
 .hero{
@@ -128,11 +130,14 @@ main{
     background-image: url(imgs/fundoHero.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
     min-height: 65vh;
     height: max-content;
     width: 100%;
     position: relative;
     color: white;
+    
 }
 .hero>img{
     position: absolute;
@@ -253,7 +258,7 @@ main{
 }
 /*section video*/
 .section-video{
-    transform: translateY(-80px);
+    margin-top:-80px;
     padding-bottom: calc(2% + 80px);
     display: flex;
     justify-content: space-between;
@@ -271,18 +276,19 @@ main{
     width: 50%;
 }
 /*section avaliação*/
-.section-avaliacao 
-{
+.section-avaliacao{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    transform: translateY(-80px);
+    justify-content: space-between;
+    gap: 5%;
     padding-bottom: calc(2% + 40px);
 }
 .section-avaliacao .container-texto{
     text-align: center;
+    width: 35%;
 }
-.section-avaliacao .container-texto *{
+.section-avaliacao .container-texto *,
+.section-avaliacao .container-comentario *{
     margin-bottom: 4%;
 }
 .section-avaliacao .container-avaliacao{
@@ -291,13 +297,47 @@ main{
     justify-content: center;
     gap: 5%;
 }
+.container-avaliacao h1{
+    height: 100%;
+}
+#texto-cinza{
+    color: var(--cor-texto-cinza);
+    margin: 0;
+}
+.container-visivel{
+    overflow: hidden;
+    width: 55%; 
+}
+.container-comentario{
+    width: 320px;
+    flex-shrink: 0;
+    min-width: 320px;
+    
+}
+.container-scroll{
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5%;
+}
+.container-comentario .foto-perfil,
+.container-comentario div{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 2%;
+}
+.container-comentario img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 /*section form*/
 .section-form 
 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transform: translateY(-120px);
     padding-bottom: calc(2% + 40px);
 }
 .section-form>*{
@@ -324,4 +364,33 @@ main{
 }
 .section-form button:hover{
     scale: 1.1;
+}
+/*Footer*/
+footer{
+    background-color: var(--cor-primaria-verm);
+    color: white;
+    padding: 2% 4%;
+    text-align: right;
+    position: relative;
+    z-index: 333;
+}
+footer .containers{
+    text-align: start;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+footer .containers>*{
+    flex: 1;
+}
+footer .containers img{
+    width: 40px;
+}
+footer .containers> *> div,
+footer .containers img{
+    display: inline-block;
+    margin: 2%;
+}
+footer h2{
+    margin-bottom: 10%;
 }
